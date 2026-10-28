@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#101713" />
+  <meta name="description" content="VYDO AI — editor de vídeo no navegador, sem música adicionada." />
+  <title>VYDO AI — Editor de vídeo</title>
+</head>
+<body>
+  <div id="app">
+    <header><div class="brand-mark">V</div><div><p class="eyebrow">EDITOR DE VÍDEO</p><h1>VYDO <span>AI</span></h1></div><div class="local-tag">NO SEU IPHONE</div></header>
+    <main>
+      <section class="intro"><p class="eyebrow">EDIÇÃO SIMPLES. RESULTADO PROFISSIONAL.</p><h2>Seu vídeo.<br><span>Do seu jeito.</span></h2><p class="muted">Edite e exporte em MP4. Nenhuma música será adicionada. O processamento acontece no navegador.</p></section>
+      <section class="panel">
+        <label class="upload" for="videoFile"><span class="upload-icon">＋</span><strong>Escolher vídeo</strong><small>Selecione um vídeo da sua galeria</small><input id="videoFile" type="file" accept="video/*" /></label>
+        <div id="previewWrap" class="preview-wrap hidden"><video id="preview" controls playsinline></video><div id="fileInfo" class="file-info"></div></div>
+        <div class="field"><label for="start">Início do corte (segundos)</label><input id="start" type="number" min="0" step="0.1" value="0" /></div>
+        <div class="field"><label for="end">Fim do corte (segundos)</label><input id="end" type="number" min="0" step="0.1" placeholder="Duração total" /></div>
+        <div class="field"><label for="look">Acabamento visual</label><select id="look"><option value="none">Original</option><option value="cinema">Cinema suave</option><option value="bright">Mais claro</option><option value="mono">Preto e branco</option></select></div>
+        <div class="field"><label for="format">Formato de saída</label><select id="format"><option value="original">Manter formato original</option><option value="9:16">Vertical 9:16 (Stories/Reels)</option><option value="1:1">Quadrado 1:1</option><option value="16:9">Horizontal 16:9</option></select></div>
+        <label class="audio-note"><span class="check">✓</span><span><strong>Sem música adicionada</strong><small>O áudio original será mantido. Não adicionamos trilha sonora.</small></span></label>
+        <button id="exportBtn" disabled>Preparar edição MP4</button>
+        <div id="status" role="status" aria-live="polite">Escolha um vídeo para começar.</div>
+        <div id="progressWrap" class="progress-wrap hidden"><div id="progressBar"></div></div>
+        <a id="downloadLink" class="download hidden" download="vydo-ai-edicao.mp4">Salvar vídeo MP4</a>
+        <p class="fineprint">Esta é uma versão inicial. O primeiro processamento pode baixar o motor de edição. Vídeos grandes podem ser lentos ou exceder a memória disponível no iPhone.</p>
+      </section>
+    </main>
+    <footer>VYDO AI · Edição local · Sem trilha adicionada</footer>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
